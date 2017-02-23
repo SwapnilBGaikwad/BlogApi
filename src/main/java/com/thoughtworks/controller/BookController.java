@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping( "/" )
-public class GreeterController {
+public class BookController {
 
     @Autowired
     private BookRepository repository;
