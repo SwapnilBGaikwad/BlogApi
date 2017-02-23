@@ -8,7 +8,6 @@ import java.io.Serializable;
 public class Book implements Serializable {
     private static final long serialVersionUID = -3009157732242241606L;
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     private String id;
     @Column(name = "title")
     private String title;

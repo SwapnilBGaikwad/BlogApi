@@ -14,8 +14,18 @@ public class GreeterController {
 
     @RequestMapping( method = RequestMethod.GET )
     @ResponseBody
-    public Book hello(@ModelAttribute Book book) {
-        return repository.findOne( "1" );
+    public Book findBook( @ModelAttribute Book book ) {
+        String id = book.getId();
+        if ( id == null ) {
+            id = "1";
+        }
+        return repository.findOne( id );
+    }
+
+    @RequestMapping( method = RequestMethod.POST )
+    @ResponseBody
+    public Book saveBook( @ModelAttribute Book book ) {
+        return repository.save( book );
     }
 
 }
